@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Example</title>
+
+<style>
+
+.example{
+	margin: 10px;
+	padding: 10px;
+	width: 180px;
+}
+
+.example span{
+  	background-color: #00FF00;
+	border: 1px solid #000000;
+	margin-bottom: 10px;
+	padding: 5px;
+	font-family: 'Open Sans',sans-serif, arial;
+	font-size:15px;
+    float:left;
+	width:180px;
+	
+}
+
+</style>
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.js" type="text/javascript" ></script>
+<script src="https://raw.github.com/SteveSanderson/knockout/master/build/output/knockout-latest.debug.js" type="text/javascript" ></script>
+<script type="text/javascript" src="KoUiVb.js"></script>
+
+<script type="text/javascript">
+var vm={
+     toggle:function(ob){
+        ob(!ob());
+    },
+	
+	effectOnClose:ko.observable(false),
+    
+    slide:ko.observable(false),
+    toggleSlide:function(){
+		vm.toggle(vm.slide);          
+    },
+    
+    highlight:ko.observable(false),
+    toggleHighlight:function(){
+        vm.toggle(vm.highlight);          
+    },
+    
+    clip:ko.observable(false),
+    toggleClip:function(){
+        vm.toggle(vm.clip);          
+    },
+    
+    blind:ko.observable(false),
+    toggleBlind:function(){
+        vm.toggle(vm.blind);          
+    },
+    
+    drop:ko.observable(false),
+    toggleDrop:function(){
+        vm.toggle(vm.drop);          
+    },
+    
+    puff:ko.observable(false),
+    togglePuff:function(){
+        vm.toggle(vm.puff);          
+    },
+    
+    pulsate:ko.observable(false),
+    togglePulsate:function(){
+        vm.toggle(vm.pulsate);          
+    },
+    
+    shake:ko.observable(false),
+    toggleShake:function(){
+        vm.toggle(vm.shake);          
+    },
+    
+    highlightPulsate:ko.observable(false),
+    toggleHighlightPulsate:function(){
+        vm.toggle(vm.highlightPulsate);          
+    },
+	
+	slideVertical:ko.observable(false),
+    toggleSlideVertical:function(){
+		vm.toggle(vm.slideVertical);          
+    }
+};
+
+$(function(){
+	
+	//CUSTOM bindings
+
+	ko.bindingHandlers.slideVerticalVisible = {
+		update: function (element, valueAccessor, allBindingsAccessor, viewModel) {
+			ko.uiVb.applyEffect(element, valueAccessor, allBindingsAccessor, viewModel, null, yourCustom.slideVertical);
+		}
+	};
+	
+	ko.bindingHandlers.highlightPulsateVisible = {
+		update: function (element, valueAccessor, allBindingsAccessor, viewModel) {
+			ko.uiVb.applyEffect(element, valueAccessor, allBindingsAccessor, viewModel, null, yourCustom.highlightPulsate);
+		}
+	};
+	
+	var yourCustom={
+		
+		 slideVertical: function ($element, effect, duration, options, isHide) {
+				if (isHide) {
+					$element.stop().slideUp(duration);
+				} else {
+					$element.stop().slideDown(duration);
+				};
+			}, //end slide
+	
+			highlightPulsate: function ($element, effect, duration, options, isHide) {
+				options = {color:'#ff0000'};
+				duration = 300;
+				ko.uiVb.JQuerUiEffect($element, 'highlight', duration, options, isHide);
+				options = { times: 2, addQueue:true };
+				duration = 300;
+				ko.uiVb.JQuerUiEffect($element, 'pulsate', duration, options, isHide);
+			} //end highlightShake
+		
+	};
+		
+	//applying bindings	
+	ko.applyBindings(vm);
+});
+</script>
+
+</head>
+
+<body>
+
+<html>
+
+
+	<label for="effectOnClose">Executes the effect on hiding too:</label>
+    <input type="checkbox" id="effectOnClose" data-bind="checked:effectOnClose" />
+    <hr align="left" width="250" />
+    
+    <div class="example">
+        <span data-bind="slideVisible:slide(),vbDuration:1000, effectOnClose:effectOnClose()" style="display:none">Lorem ipsum dolor sit amet</span>
+        <input type="button" value="Toggle slide" data-bind="click:toggleSlide">
+    </div>
+    
+<div class="example">
+        <span data-bind="highlightVisible :highlight(),vbOptions:{color:'#f00'}, vbDuration:1000, effectOnClose:effectOnClose()" style="display:none">Lorem ipsum dolor sit amet</span>
+        <input type="button" value="Toggle highlight " data-bind="click:toggleHighlight">
+    </div>
+   
+<div class="example">
+        <span data-bind="clipVisible:clip(),vbDuration:1000, effectOnClose:effectOnClose()" style="display:none">Lorem ipsum dolor sit amet</span>
+        <input type="button" value="Toggle clip" data-bind="click:toggleClip">
+    </div>
+   
+<div class="example">
+        <span data-bind="blindVisible:blind(),vbDuration:1000, effectOnClose:effectOnClose()" style="display:none">Lorem ipsum dolor sit amet</span>
+        <input type="button" value="Toggle blind" data-bind="click:toggleBlind">
+    </div>
+    
+<div class="example">
+        <span data-bind="dropVisible:drop(),vbDuration:1000" style="display:none">Lorem ipsum dolor sit amet</span>
+        <input type="button" value="Toggle drop" data-bind="click:toggleDrop">
+    </div>
+    
+<div class="example">
+        <span data-bind="puffVisible:puff(),vbDuration:1000, effectOnClose:effectOnClose()" style="display:none">Lorem ipsum dolor sit amet</span>
+        <input type="button" value="Toggle puff" data-bind="click:togglePuff">
+    </div>
+    
+<div class="example">
+        <span data-bind="pulsateVisible:pulsate(), effectOnClose:effectOnClose()" style="display:none">Lorem ipsum dolor sit amet</span>
+        <input type="button" value="Toggle pulsate" data-bind="click:togglePulsate">
+    </div>
+    
+<div class="example">
+        <span data-bind="shakeVisible:shake(),vbOptions:{times:3,direction:'left',distance:40}, effectOnClose:effectOnClose()" style="display:none">Lorem ipsum dolor sit amet</span>
+        <input type="button" value="Toggle shake" data-bind="click:toggleShake">
+    </div>
+    
+<div class="example">
+        <span data-bind="highlightPulsateVisible:highlightPulsate(), vbDuration:1000, effectOnClose:effectOnClose()" style="display:none">Lorem ipsum dolor sit amet</span>
+        <input type="button" value="Toggle highlightPulsate" data-bind="click:toggleHighlightPulsate">
+    </div>
+    
+<div class="example">
+      <span data-bind="slideVerticalVisible:slideVertical(),vbDuration:1000, effectOnClose:effectOnClose()" style="display:none">Lorem ipsum dolor sit amet</span>
+        <input type="button" value="Toggle slideVertical" data-bind="click:toggleSlideVertical">
+    </div>
+    
+    
+</html>
+
+</body>
+</html>
