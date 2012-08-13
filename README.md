@@ -2,7 +2,7 @@
 
 ##Getting started
 
-just add a reference to JQueryUI library in your project and you're ready to use this script.
+Just add a reference to JQueryUI library in your project and you're ready to use this script.
 
 For more details, see
 
