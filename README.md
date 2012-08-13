@@ -1,4 +1,4 @@
-**KoUIvisibilityBindings** is a little script containing some bindings that make use of JQuery UI effects..
+**KoUIvisibilityBindings** is a little script containing some bindings that make use of JQuery UI effects.
 
 ##Getting started
 
