@@ -83,55 +83,94 @@
 	* vbOptions: {} default.
 	* effectOnClose: false by default.
 	***********************************************/
-
-	ko.bindingHandlers.slideVisible = {
+	
+	ko.bindingHandlers.slideVisible={
 		update: function (element, valueAccessor, allBindingsAccessor, viewModel) {
 			applyEffect(element, valueAccessor, allBindingsAccessor, viewModel, 'slide');
 		}
 	};
 	
-	ko.bindingHandlers.highlightVisible = {
+	ko.bindingHandlers.highlightVisible={
 		update: function (element, valueAccessor, allBindingsAccessor, viewModel) {
 			applyEffect(element, valueAccessor, allBindingsAccessor, viewModel, 'highlight');
 		}
 	};
 	
-	ko.bindingHandlers.clipVisible = {
+	ko.bindingHandlers.clipVisible={
 		update: function (element, valueAccessor, allBindingsAccessor, viewModel) {
 			applyEffect(element, valueAccessor, allBindingsAccessor, viewModel, 'clip');
 		}
 	};
 	
-	ko.bindingHandlers.blindVisible = {
+	ko.bindingHandlers.blindVisible={
 		update: function (element, valueAccessor, allBindingsAccessor, viewModel) {
 			applyEffect(element, valueAccessor, allBindingsAccessor, viewModel, 'blind');
 		}
 	};
 	
-	ko.bindingHandlers.dropVisible = {
+	ko.bindingHandlers.dropVisible={
 		update: function (element, valueAccessor, allBindingsAccessor, viewModel) {
 			applyEffect(element, valueAccessor, allBindingsAccessor, viewModel, 'drop');
 		}
 	};
 	
-	ko.bindingHandlers.puffVisible = {
+	ko.bindingHandlers.puffVisible={
 		update: function (element, valueAccessor, allBindingsAccessor, viewModel) {
 			applyEffect(element, valueAccessor, allBindingsAccessor, viewModel, 'puff');
 		}
 	};
 	
-	ko.bindingHandlers.pulsateVisible = {
+	ko.bindingHandlers.pulsateVisible={
 		update: function (element, valueAccessor, allBindingsAccessor, viewModel) {
 			applyEffect(element, valueAccessor, allBindingsAccessor, viewModel, 'pulsate');
 		}
 	};
 	
-	ko.bindingHandlers.shakeVisible = {
+	ko.bindingHandlers.bounceVisible={
+		update: function (element, valueAccessor, allBindingsAccessor, viewModel) {
+			applyEffect(element, valueAccessor, allBindingsAccessor, viewModel, 'bounce');
+		}
+	};
+	
+	ko.bindingHandlers.fadeVisible={
+		update: function (element, valueAccessor, allBindingsAccessor, viewModel) {
+			applyEffect(element, valueAccessor, allBindingsAccessor, viewModel, 'fade');
+		}
+	};
+	
+	ko.bindingHandlers.foldVisible={
+		update: function (element, valueAccessor, allBindingsAccessor, viewModel) {
+			applyEffect(element, valueAccessor, allBindingsAccessor, viewModel, 'fold');
+		}
+	};
+	
+	ko.bindingHandlers.scaleVisible={
+		update: function (element, valueAccessor, allBindingsAccessor, viewModel) {
+			applyEffect(element, valueAccessor, allBindingsAccessor, viewModel, 'scale');
+		}
+	};
+	
+	ko.bindingHandlers.sizeVisible={
+		update: function (element, valueAccessor, allBindingsAccessor, viewModel) {
+			applyEffect(element, valueAccessor, allBindingsAccessor, viewModel, 'size');
+		}
+	};
+		
+	ko.bindingHandlers.shakeVisible={
 		update: function (element, valueAccessor, allBindingsAccessor, viewModel) {
 			applyEffect(element, valueAccessor, allBindingsAccessor, viewModel, 'shake');
 		}
 	};
 	
+	ko.bindingHandlers.explodeVisible={
+		update: function (element, valueAccessor, allBindingsAccessor, viewModel) {
+			applyEffect(element, valueAccessor, allBindingsAccessor, viewModel, 'explode');
+		}
+	};
+	
+	
+	
+		
 	//adding to ko
 	ko.uiVb={
 		applyEffect:applyEffect,

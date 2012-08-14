@@ -78,6 +78,21 @@ var vm={
     toggleShake:function(){
         vm.toggle(vm.shake);          
     },
+	
+	explode:ko.observable(false),
+    toggleExplode:function(){
+        vm.toggle(vm.explode);          
+    },
+	
+	bounce:ko.observable(false),
+    toggleBounce:function(){
+        vm.toggle(vm.bounce);          
+    },
+	
+	fade:ko.observable(false),
+    toggleFade:function(){
+        vm.toggle(vm.fade);          
+    },
     
     highlightPulsate:ko.observable(false),
     toggleHighlightPulsate:function(){
@@ -87,6 +102,26 @@ var vm={
 	slideVertical:ko.observable(false),
     toggleSlideVertical:function(){
 		vm.toggle(vm.slideVertical);          
+    },
+	
+	fade:ko.observable(false),
+    toggleFade:function(){
+        vm.toggle(vm.fade);          
+    },
+	
+	fold:ko.observable(false),
+    toggleFold:function(){
+        vm.toggle(vm.fold);          
+    },
+	
+	scale:ko.observable(false),
+    toggleScale:function(){
+        vm.toggle(vm.scale);          
+    },
+	
+	size:ko.observable(false),
+    toggleSize:function(){
+        vm.toggle(vm.size);          
     }
 };
 
@@ -182,6 +217,37 @@ $(function(){
         <span data-bind="shakeVisible:shake(),vbOptions:{times:3,direction:'left',distance:40}, effectOnClose:effectOnClose()" style="display:none">Lorem ipsum dolor sit amet</span>
         <input type="button" value="Toggle shake" data-bind="click:toggleShake">
     </div>
+    
+    <div class="example">
+        <span data-bind="explodeVisible:explode(), effectOnClose:effectOnClose()" style="display:none">Lorem ipsum dolor sit amet</span>
+        <input type="button" value="Toggle explode" data-bind="click:toggleExplode">
+    </div>
+    
+    <div class="example">
+        <span data-bind="bounceVisible:bounce(), effectOnClose:effectOnClose()" style="display:none">Lorem ipsum dolor sit amet</span>
+        <input type="button" value="Toggle bounce" data-bind="click:toggleBounce">
+    </div>
+    
+    <div class="example">
+        <span data-bind="fadeVisible:fade(), effectOnClose:effectOnClose()" style="display:none">Lorem ipsum dolor sit amet</span>
+        <input type="button" value="Toggle fade" data-bind="click:toggleFade">
+    </div>
+    
+    <div class="example">
+        <span data-bind="foldVisible:fold(), effectOnClose:effectOnClose()" style="display:none">Lorem ipsum dolor sit amet</span>
+        <input type="button" value="Toggle fold" data-bind="click:toggleFold">
+    </div>
+    
+    <div class="example">
+        <span data-bind="scaleVisible:scale(), effectOnClose:effectOnClose()" style="display:none">Lorem ipsum dolor sit amet</span>
+        <input type="button" value="Toggle scale" data-bind="click:toggleScale">
+    </div>
+    
+    <div class="example">
+        <span data-bind="sizeVisible:size(),vbOptions:{to: {width: 200,height: 60}}, effectOnClose:effectOnClose()" style="display:none">Lorem ipsum dolor sit amet</span>
+        <input type="button" value="Toggle size" data-bind="click:toggleSize">
+    </div>
+    
     
 <div class="example">
         <span data-bind="highlightPulsateVisible:highlightPulsate(), vbDuration:1000, effectOnClose:effectOnClose()" style="display:none">Lorem ipsum dolor sit amet</span>
