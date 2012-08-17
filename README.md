@@ -1,8 +1,8 @@
-**KoUIvisibilityBindings** is a little script containing some bindings that make use of JQuery UI effects.
+**KoUIvisibilityBindings** is a little script in form of knockout plugin containing some bindings that make use of JQuery UI effects.
 
 ##Getting started
 
-Just add a reference to JQueryUI library in your project and you're ready to use this script.
+Just add a reference to JQueryUI library (along with JQuery and KnockoutJS) in your project and you're ready to use this script.
 
 For more details, see
 
